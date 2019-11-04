@@ -32,5 +32,14 @@ public class PokemonBattle {
 		int stab = input.nextInt();
 		System.out.print("HP: ");
 		int hp = input.nextInt();
+		double mod = (0.85 + (Math.random() * 0.15)) * stab;
+		double dmg = (int) ((((2 * lvl + 10) / 250) + ((atk/def) * base + 2)) * mod);
+		int finalHp = (int) (dmg - hp);
+		System.out.println(dmgPoke + " sustained " + dmg + " points damage.");
+		System.out.println("HP, after damage, are now " + finalHp);
+		statsTable(dmgPoke);
+	}
+	public static void statsTable(String name) {
+		System.out.println("Name   " + name);
 	}
 }
